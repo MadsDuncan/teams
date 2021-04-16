@@ -1,13 +1,21 @@
 #!/usr/bin/env python3
 
-import sys
-import random
 from math import ceil
 from typing import List
 from random import shuffle
 from dataclasses import dataclass
-from PyQt5.QtWidgets import *
+
 from PyQt5.QtGui import QIntValidator
+from PyQt5.QtWidgets import (
+    QApplication,
+    QLabel,
+    QHBoxLayout,
+    QLineEdit,
+    QPushButton,
+    QPlainTextEdit,
+    QVBoxLayout,
+    QWidget,
+)
 
 
 team_names = (
@@ -44,7 +52,7 @@ def generate_teams(no_teams: int, players: List[str]) -> List[Team]:
 
         for __ in range(team_size):
             if random_players:
-                teams[i].players.append(random_players.pop(0))                
+                teams[i].players.append(random_players.pop(0))
 
     return teams
 
